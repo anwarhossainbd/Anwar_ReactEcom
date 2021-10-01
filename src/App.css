@@ -27,6 +27,7 @@ body{
   color: black;
   background-color: white;
   height: 100%;
+  z-index: -1;
 }
 
 li,
@@ -45,7 +46,7 @@ img{
 
 .container{
   width: 100%;
-  padding: 0 100px;
+  padding: 0 30px;
 }
 
 /*Navbar Styles*/
@@ -59,7 +60,11 @@ nav{
   display: flex;
   position: fixed;
   top: 0;
+  z-index: 999;
+  background: white;
 }
+
+
 
 .left{
   width: 50%;
@@ -83,18 +88,19 @@ nav{
   color: var(--lightDark);
   margin-right: 12px;
   margin-top: 20px;
+
 }
 
 .cartCount{
   display: inline-block;
   font-size: 12px;
-  width: 35px;
-  height: 35px;
+  width: 32px;
+  height: 32px;
   background: var(--mainColor);
   color: var(--whiteColor);
   border-radius: 50%;
   text-align: center;
-  line-height: 37px;
+  line-height: 32px;
 }
 
 /*Banner Styles*/
@@ -129,6 +135,115 @@ header{
   margin-top: 10px;
   font-family: "Raleway", sans-serif;
 }
+
+/*Product Style*/
+
+.products{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.product{
+  width: 25%;
+  padding: 0 12px;
+  margin: 20px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.hot{
+  position: absolute;
+  top:0;
+  background: orangered;
+  padding: 5px 15px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: white;
+}
+
+.new{
+  position: absolute;
+  top:0;
+  background: green;
+  padding: 5px 15px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: white;
+}
+
+
+.product-image{
+  width: 100%;
+  height: 200px;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.product-image img{
+  width: 100%;
+  height: 200px;
+}
+
+.product-name{
+  font-size: 20px;
+  font-weight: 600;
+  color: deeppink;
+  font-family: 'Raleway',sans-serif;
+  margin: 8px 0;
+}
+
+.product-price{
+  font-size: 20px;
+  font-weight: 500;
+  color: olive;
+  font-family: 'Lato',sans-serif;
+}
+
+.add-to-cart{
+  background: salmon;
+  padding:10px 20px;
+  width: 100%;
+  color: var(--whiteColor);
+  font-family:'Lato',sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.add-to-cart:hover{
+  background: mediumslateblue;
+  transition: all 200ms ease-in-out;
+}
+
+/*Not Found Styles*/
+
+.not-found{
+  margin-top: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
