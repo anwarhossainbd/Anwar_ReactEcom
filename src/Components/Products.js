@@ -1,11 +1,14 @@
 import React, {Fragment, useContext} from 'react';
 import {ProductContext} from "../Global/ProductContext";
 import Banner from "./Banner";
+import {CartContext} from "../Global/CartContext";
 
 const Products = () => {
 
-    const data=useContext(ProductContext);
-    const {products} =data ;
+    const {products} =useContext(ProductContext);
+    const {dispatch} =useContext(CartContext)
+
+
 
     return (
 
@@ -29,7 +32,11 @@ const Products = () => {
                             {products.status==='hot'? <div className="hot">Hot</div>:""}
                             {products.status==='new'? <div className="new">New</div>:""}
 
-                            <div className="add-to-cart">
+                            <div className="add-to-cart" onClick={()=>{
+                                dispatch(
+                                    {type:"ADD_TO_CART",id:products.id, products}
+                                )
+                            }}>
                                 Add to Cart
                             </div>
                         </div>
