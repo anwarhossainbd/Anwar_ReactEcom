@@ -31,6 +31,33 @@ export const CartReducer = (state,action) => {
            index = shoppingCart.findIndex(cart=>cart.id ===action.id)
            shoppingCart[index]=product ;
            return {shoppingCart:[...shoppingCart],totalPrice:updatedPrice,qty:updatedQty}
+       break;
+
+       case "DEC":
+           product=action.cart;
+           if (product.qty>1){
+               product.qty=product.qty-1 ;
+               updatedQty =qty-1;
+               updatedPrice =totalPrice-product.price;
+               index=shoppingCart.findIndex(c=>c.id===action.id) ;
+               shoppingCart[index]= product ;
+
+               return {shoppingCart: [...shoppingCart],totalPrice:updatedPrice,qty:updatedQty}
+           }
+           else {
+               return state;
+           }
+           break;
+
+       case "DELETE":
+           const filtered =shoppingCart.filter(pro=>pro.id !==action.id)
+            product =action.cart ;
+            updatedQty =qty-product.qty;
+            updatedPrice =totalPrice-product.price*product.qty;
+
+           return {shoppingCart: [...filtered],totalPrice: updatedPrice,qty:updatedQty}
+
+           break;
 
 
 

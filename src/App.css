@@ -334,8 +334,78 @@ header{
   font-size: 20px;
 }
 
+/*Cart Summary*/
 
+.cart-summary{
+   width: 25%;
+  padding: 0 0 0 20px;
+}
 
+.summary{
+  background: var(--whiteColor);
+  margin-top: 100px;
+  padding: 13px;
+}
+
+.summary h3{
+  position: relative;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+  color: green;
+  font-family: "Raleway",sans-serif;
+}
+
+.summary h3::after{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 5px;
+  background-color: rgb(140, 24, 182);
+  bottom: -20px;
+  left: 0;
+
+}
+
+.total-items{
+  display: flex;
+  margin:15px 0;
+}
+
+.items{
+  width: 50%;
+  text-align: left;
+  padding-left: 10px;
+  font-weight: normal;
+}
+
+.items-count{
+  width: 50%;
+  text-align: right;
+  font-weight: bold;
+  color: var(--mainColor);
+}
+
+.total-price-section{
+  display: flex;
+  margin: 15px 0;
+}
+
+.just-title{
+  width: 50%;
+  padding-left: 10px;
+  text-align: left;
+  font-weight: normal;
+}
+
+.items-price{
+  width: 50%;
+  text-align: right;
+  font-weight: bold;
+  color: var(--mainColor);
+}
 
 
 
